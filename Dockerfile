@@ -35,5 +35,7 @@ RUN mkdir -p /tmp/.X11-unix && chmod 1777 /tmp/.X11-unix
 ADD set_root_pw.sh /set_root_pw.sh
 ADD run.sh /run.sh
 RUN chmod +x /*.sh
+
+# Run
 EXPOSE 22
 CMD ["/run.sh"]
