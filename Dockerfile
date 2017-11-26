@@ -5,7 +5,7 @@ MAINTAINER Claude Henchoz "claude.henchoz@gmail.com"
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install --no-install-recommends -y \
     openssh-server \
-    gnupg \
+    gpgv2 \
     dirmngr \
     && rm -rf /var/lib/apt/lists/*
 
