@@ -27,6 +27,7 @@ RUN sed -i "s/#PasswordAuthentication/PasswordAuthentication/g" /etc/ssh/sshd_co
 RUN apt-get update && apt-get install --no-install-recommends -y \
     xfce4 \
     xfce4-terminal \
+    tango-icon-theme \
     firefox \
     && rm -rf /var/lib/apt/lists/*
 
