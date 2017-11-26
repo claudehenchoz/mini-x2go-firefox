@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     && rm -rf /var/lib/apt/lists/*
 
 # X2Go install
-RUN apt-key adv --recv-keys --keyserver keys.gnupg.net E1F958385BFE2B6E
+RUN apt-key adv --recv-keys --keyserver hkp://keys.gnupg.net:80 E1F958385BFE2B6E
 RUN echo 'deb http://packages.x2go.org/debian unstable main' | tee /etc/apt/sources.list.d/x2go.list
 RUN apt-get update && apt-get install --no-install-recommends -y \
     x2goserver \
