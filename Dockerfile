@@ -1,4 +1,4 @@
-FROM debian:stable-slim
+FROM debian:unstable-slim
 MAINTAINER Claude Henchoz "claude.henchoz@gmail.com"
 
 # Prerequisites
@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 
 # X2Go install
 RUN apt-key adv --recv-keys --keyserver keys.gnupg.net E1F958385BFE2B6E
-RUN echo 'deb http://packages.x2go.org/debian stable main' | tee /etc/apt/sources.list.d/x2go.list
+RUN echo 'deb http://packages.x2go.org/debian unstable main' | tee /etc/apt/sources.list.d/x2go.list
 RUN apt-get update && apt-get install --no-install-recommends -y \
     x2goserver \
     x2goserver-xsession \
@@ -27,7 +27,7 @@ RUN sed -i "s/#PasswordAuthentication/PasswordAuthentication/g" /etc/ssh/sshd_co
 RUN apt-get update && apt-get install --no-install-recommends -y \
     xfce4 \
     xfce4-terminal \
-    iceweasel \
+    firefox \
     && rm -rf /var/lib/apt/lists/*
 
 # Finalization
